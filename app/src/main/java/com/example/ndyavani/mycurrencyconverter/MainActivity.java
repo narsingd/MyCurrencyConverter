@@ -18,12 +18,12 @@ public class MainActivity extends AppCompatActivity {
     public void convertToINR(View view) {
         Log.i("convertToINR", "Hello");
         EditText usdEditText = (EditText)findViewById(R.id.usdCurrency);
-        int usd = Integer.parseInt(usdEditText.getText().toString());
+        double usd = Double.parseDouble(usdEditText.getText().toString());
         Log.i("convertToINR", usd+"");
-        int inr = usd * 68;
+        double inr = usd * 68;
         Log.i("convertToINR", inr+"");
-        String msg = usd + " USD = " + inr + " INR";
+        String msg = String.format("%.2f USD = %.2f INR", usd, inr);
         Log.i("convertToINR", msg);
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
     }
 }
